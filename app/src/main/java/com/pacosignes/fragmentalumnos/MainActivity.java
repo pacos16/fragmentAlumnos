@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements IAlumnoListener {
     @Override
     public void onAlumnoSeleccionado(int posicion) {
 
+
         boolean hayDetalle= false;//(getSupportFragmentManager().findFragmentById())!=null);
         if(hayDetalle){
 

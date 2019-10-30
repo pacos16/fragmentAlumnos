@@ -15,10 +15,12 @@ public class RvAdapterNotas extends RecyclerView.Adapter<RvAdapterNotas.NotasVie
     private ArrayList<Asignatura> asignaturas;
 
 
+
+
     @NonNull
     @Override
     public NotasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_notas,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.listitem_notas,parent,false);
 
         return new NotasViewHolder(view);
     }
@@ -32,7 +34,7 @@ public class RvAdapterNotas extends RecyclerView.Adapter<RvAdapterNotas.NotasVie
 
     @Override
     public int getItemCount() {
-        return alumno.getNombre().length();
+        return alumno.getNotas().size();
     }
 
     public class NotasViewHolder extends RecyclerView.ViewHolder{
@@ -52,6 +54,7 @@ public class RvAdapterNotas extends RecyclerView.Adapter<RvAdapterNotas.NotasVie
 
         public void bind(String codigo){
             String nomAsig="No hay descripcion";
+
             for (Asignatura a:asignaturas
                  ) {
                 if (codigo.equals(a.getCodAsig())){

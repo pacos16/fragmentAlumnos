@@ -30,7 +30,7 @@ public class RvAdapterAlumnos extends RecyclerView.Adapter<RvAdapterAlumnos.Alum
 
         View view= LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.listitem_alumnos,parent,false);
-        return new AlumnosViewHolder(view);
+        return new AlumnosViewHolder(view,listener);
     }
 
     @Override
@@ -50,12 +50,16 @@ public class RvAdapterAlumnos extends RecyclerView.Adapter<RvAdapterAlumnos.Alum
         TextView tvNombre;
         TextView tvEmail;
         TextView tvEdad;
+        private IAlumnoListener listener;
 
-        public AlumnosViewHolder(@NonNull View itemView ) {
+        public AlumnosViewHolder(@NonNull View itemView,IAlumnoListener listener ) {
             super(itemView);
             this.tvNombre = itemView.findViewById(R.id.tvNombre);
             this.tvEmail = itemView.findViewById(R.id.tvEmail);
             this.tvEdad =itemView.findViewById(R.id.tvEdad);
+            this.listener=listener;
+
+            itemView.setOnClickListener(this);
         }
 
         public void bind(Alumno a){
