@@ -97,4 +97,11 @@ public class Parser {
 
     }
 
+    public ArrayList<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
+    public ArrayList<Asignatura> getAsignaturas() {
+        return asignaturas;
+    }
 }
